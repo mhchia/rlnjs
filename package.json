@@ -1,5 +1,5 @@
 {
-  "name": "rlnjs",
+  "name": "test-rlnjs",
   "version": "2.0.0-alpha.2",
   "description": "Client library for generating and using RLN ZK proofs.",
   "license": "MIT",
