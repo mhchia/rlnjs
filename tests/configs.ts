@@ -8,7 +8,7 @@ const thisFileDirname = __dirname
 function getParamsPath(paramsDir: string): CircuitParamsFilePathT {
     return {
         vkeyPath: path.join(paramsDir, "verification_key.json"),
-        wasmFilePath: path.join(paramsDir, "rln.wasm"),
+        wasmFilePath: path.join(paramsDir, "rln-same.wasm"),
         finalZkeyPath: path.join(paramsDir, "rln_final.zkey"),
     }
 }
