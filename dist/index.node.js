@@ -1,6 +1,6 @@
 /**
  * @module test-rlnjs
- * @version 2.0.0
+ * @version 2.0.8
  * @file Client library for generating and using RLN ZK proofs.
  * @copyright Ethereum Foundation 2022
  * @license MIT
