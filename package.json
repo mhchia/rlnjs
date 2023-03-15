@@ -27,8 +27,7 @@
     "test": "jest",
     "test:debug": "jest --silent=false",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src/ -c .eslintrc.js",
-    "format": "eslint --ext .ts,.tsx,.js,.jsx src/ -c .eslintrc.js --fix",
-    "haha": "echo 'haha'"
+    "format": "eslint --ext .ts,.tsx,.js,.jsx src/ -c .eslintrc.js --fix"
   },
   "keywords": [
     "rln",
