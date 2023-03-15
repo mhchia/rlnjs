@@ -900,4 +900,16 @@ var Cache = /** @class */ (function () {
     return Cache;
 }());
 
+// Imports
+if (typeof process === 'undefined') {
+    global.process = {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // @ts-expect-error: in browser process is not defined and thus the typing is incorrect
+        browser: true,
+        env: {
+            ENVIRONMENT: 'BROWSER',
+        },
+    };
+}
+
 export { Cache, RLN, Registry, genExternalNullifier };
