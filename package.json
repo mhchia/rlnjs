@@ -23,6 +23,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "rollup --config rollup.config.mjs",
+    "build-and-push": "npm run build && git add -u && git commit -m 't' && git push mine",
     "test": "jest",
     "test:debug": "jest --silent=false",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx src/ -c .eslintrc.js",
