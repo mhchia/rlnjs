@@ -1,0 +1,29 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "re-install": "npm uninstall rlnjs && npm run install-rln",
+    "test-node": "ts-node -r tsconfig-paths/register src/index.ts --trace-warnings",
+    "build-browser": "rollup -c",
+    "build-browser-old": "rollup -c && browserify browserify.config.js -o dist/bundle.js",
+    "run-browser": "npx http-server",
+    "install-rln": "npm install rlnjs",
+    "temp": "github:mhchia/rlnjs#test/browser"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "rollup-plugin-typescript2": "^0.34.1"
+  },
+  "dependencies": {
+    "rlnjs": "^2.0.5"
+  }
+}
