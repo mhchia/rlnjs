@@ -17,5 +17,10 @@
     "declaration": true,
     "declarationDir": "./dist/types",
     "strict": true
-  }
+  },
+  "rootDir": "./src",
+  "outDir": "./dist",
+  "files": [
+    "src/index.ts",
+  ]
 }
