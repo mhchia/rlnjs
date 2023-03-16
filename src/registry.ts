@@ -7,7 +7,7 @@ import { StrBigInt } from './types'
 export const DEFAULT_REGISTRY_TREE_DEPTH = 20
 
 export default class Registry {
-  private _registry: IncrementalMerkleTree
+  public _registry: IncrementalMerkleTree
 
   private _slashed: IncrementalMerkleTree
 
