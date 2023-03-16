@@ -1,20 +1,12 @@
 import { MerkleProof } from '@zk-kit/incremental-merkle-tree';
 import { Identity } from '@semaphore-protocol/identity';
-import { RLNFullProof, StrBigInt, VerificationKeyT } from './types';
+import { RLNFullProof, RLNSNARKProof, RLNWitnessT, StrBigInt, VerificationKeyT } from './types';
 type RLNExportedT = {
     identity: string;
     rlnIdentifier: string;
     verificationKey: string;
     wasmFilePath: string;
     finalZkeyPath: string;
-};
-type RLNWitnessT = {
-    identity_secret: bigint;
-    path_elements: any[];
-    identity_path_index: number[];
-    x: string | bigint;
-    epoch: bigint;
-    rln_identifier: bigint;
 };
 /**
 RLN is a class that represents a single RLN identity.
@@ -41,7 +33,7 @@ export default class RLN {
      * @param witness The parameters for creating the proof.
      * @returns The full SnarkJS proof.
      */
-    _genProof(witness: RLNWitnessT): Promise<RLNFullProof>;
+    _genProof(epoch: bigint, witness: RLNWitnessT): Promise<RLNFullProof>;
     /**
    * Generates a SnarkJS full proof with Groth16.
    * @param witness The parameters for creating the proof.
@@ -49,19 +41,19 @@ export default class RLN {
    * @param finalZkeyPath The path to the final zkey file.
    * @returns The full SnarkJS proof.
    */
-    static _genProof(witness: RLNWitnessT, wasmFilePath: string, finalZkeyPath: string): Promise<RLNFullProof>;
+    static _genSNARKProof(witness: RLNWitnessT, wasmFilePath: string, finalZkeyPath: string): Promise<RLNSNARKProof>;
     /**
      * Verifies a zero-knowledge SnarkJS proof.
      * @param fullProof The SnarkJS full proof.
      * @returns True if the proof is valid, false otherwise.
      */
-    verifyProof({ proof, publicSignals }: RLNFullProof): Promise<boolean>;
+    verifyProof(rlnRullProof: RLNFullProof): Promise<boolean>;
     /**
    * Verifies a zero-knowledge SnarkJS proof.
    * @param fullProof The SnarkJS full proof.
    * @returns True if the proof is valid, false otherwise.
    */
-    static verifyProof(verificationKey: VerificationKeyT, { proof, publicSignals }: RLNFullProof): Promise<boolean>;
+    static verifySNARKProof(verificationKey: VerificationKeyT, { proof, publicSignals }: RLNSNARKProof): Promise<boolean>;
     /**
      * Creates witness for rln proof
      * @param merkleProof merkle proof that identity exists in RLN tree

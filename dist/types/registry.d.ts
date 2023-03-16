@@ -1,8 +1,8 @@
-import { MerkleProof } from '@zk-kit/incremental-merkle-tree';
+import { IncrementalMerkleTree, MerkleProof } from '@zk-kit/incremental-merkle-tree';
 import { StrBigInt } from './types';
 export declare const DEFAULT_REGISTRY_TREE_DEPTH = 20;
 export default class Registry {
-    private _registry;
+    _registry: IncrementalMerkleTree;
     private _slashed;
     _treeDepth: number;
     _zeroValue: bigint;

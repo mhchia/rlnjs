@@ -35,7 +35,7 @@ export default class Cache {
      * @param proof the RLNFullProof to add to the cache
      * @returns an object with the status of the proof and the nullifier and secret if the proof is a breach
      */
-    addProof(proof: RLNFullProof): EvaluatedProof;
+    addProof(fullProof: RLNFullProof): EvaluatedProof;
     private evaluateNullifierAtEpoch;
     private evaluateEpoch;
     private removeEpoch;
